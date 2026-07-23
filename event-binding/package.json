@@ -1,0 +1,48 @@
+{
+  "name": "event-binding",
+  "version": "0.1.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^15.2.9",
+    "@angular/common": ">=19.2.16", 
+    "@angular/compiler": "<= 18.2.14",
+    "@angular/core": "^15.2.9",
+    "@angular/forms": "^15.2.9",
+    "@angular/platform-browser": "^15.2.9",
+    "@angular/platform-browser-dynamic": "^15.2.9",
+    "@angular/router": "^15.2.9",
+    "webpack": ">=5.94.0",
+    "webpack-dev-middleware": ">=6.1.2",
+    "postcss": ">=8.4.35",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.3",
+    "ip": "<= 2.0.1",
+    
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^15.2.9",
+    "@angular/cli": "~15.2.9",
+    "@angular/compiler-cli": "<= 18.2.14",
+    "@types/jasmine": "~4.3.0",
+    "jasmine-core": "~4.5.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "postcss": ">=8.4.35",
+    "webpack": ">=5.94.0",
+    "webpack-dev-middleware": ">=6.1.2",
+    "typescript": "~4.9.4",
+    "zone.js": "~0.14.3",
+    "ip": "<= 2.0.1",
+  }
+}

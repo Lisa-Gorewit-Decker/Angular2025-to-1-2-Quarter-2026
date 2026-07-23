@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+div.row {
+  margin: 8px 0px;
+}
+
+label {
+  font-weight: 600;
+  margin: 8px 0px;
+  font-size: 1rem;
+}
+
+button.btn.btn-primary {
+  margin: 8px 0px;
+}

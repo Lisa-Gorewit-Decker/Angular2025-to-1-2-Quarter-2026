@@ -1,0 +1,16 @@
+
+<div class="row">
+  <hr>
+  <app-shopping-edit></app-shopping-edit>
+  <div class="cols-xs-10">
+    <ul class="list-group">
+      <li>
+        <a *ngFor="let ingredient of ingredients"
+        class="list-group-item"
+        style="cursor: pointer"
+      >
+       {{ ingredient.name }} ({{ ingredient.amount }}) </a></li>
+    </ul>
+</div>
+</div>
+<div style="margin:12px 0px;"> </div>

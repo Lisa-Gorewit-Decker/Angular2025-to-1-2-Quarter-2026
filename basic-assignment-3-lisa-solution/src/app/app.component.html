@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Basics Assignment 3 Lisa Solution</h2>
+      <hr>
+      <!--<button class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button>-->
+      <button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
+      <div>
+        &nbsp;
+      </div>
+      <p *ngIf="showSecret">The Secret Password = Lollipop</p>
+      <div
+        *ngFor="let logItem of log"
+        [ngStyle]="{backgroundColor: logItem >= 6 ? 'dodgerblue' : 'transparent'}"
+        [ngClass]="{'white-text': logItem >= 6}"
+      >{{ logItem }}</div>
+    </div>
+  </div>
+</div>

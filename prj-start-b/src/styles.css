@@ -1,0 +1,79 @@
+/*div.col-md-12 h2{*/
+/*  !*text-align: center;*!*/
+/*  !*color:green;*!*/
+/*}*/
+
+/*div.col-md-12 h2{*/
+
+/*}*/
+a.nav-link.px-2.text-secondary {
+  margin: 0px 20px 0px 20px;
+  display: inline-flex;
+}
+li.dropdown-white {
+  margin: 0px 10px 0px 10px;
+  display: inline-flex;
+  text-align: center;
+}
+a.nav-link.px-2.text-white {
+  margin: 0px 10px 0px 10px;
+  /*display: inline-flex;*/
+  text-align: center;
+}
+a.dropdown-toggle.text-white{
+  list-style-type: none !important;
+  text-decoration: none !important;
+}
+
+li.dropdown::marker {
+  list-style-type: none !important;
+}
+
+li.dropdown {
+  list-style-type: none !important;
+  text-decoration: none !important;
+}
+
+a.dropdown-toggle.text-white {
+  text-decoration: none !important;
+  margin: 0px 20px;
+}
+h5.recipe-book{
+  line-height: 0 !important;
+  margin: 0px auto;
+
+}
+a.nav-link.px-2.text-secondary {
+  margin: 0px 20px;
+  display: inline-flex;
+}
+a.nav-link.px-2.text-white {
+  margin: 0px 10px;
+  display: inline-flex;
+  text-align: center;
+}
+
+li.dropdown::marker {
+  list-style-type: none !important;
+}
+
+li.dropdown {
+  list-style-type: none !important;
+
+}
+
+a.dropdown-toggle.text-white {
+  text-decoration: none !important;
+  margin: 0px 20px;
+}
+h5.recipe-book{
+  line-height: 0 !important;
+  margin: 0px auto;
+}
+a.list-group-item.clearfix {
+  margin: 10px  0px !important;
+  line-height: 0 !important;
+}
+h4.list-group-item-heading {
+  margin-bottom: 20px !important;
+}
