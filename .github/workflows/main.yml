@@ -31,7 +31,7 @@ jobs:
           echo "matrix=${dirs}" >> "$GITHUB_OUTPUT"
 
   angular-doctor:
-    name: Angular Doctor (${{ matrix.directory }})
+    name: Angular Doctor (${{ matrix.project }})
     needs: find-projects
     if: needs.find-projects.outputs.matrix != '[]'
     runs-on: ubuntu-latest
