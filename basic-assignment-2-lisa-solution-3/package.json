@@ -73,6 +73,7 @@
     "brace-expansion": ">=1.1.16 <2.0.0 || >=2.1.2",
     "fast-uri": ">=2.4.3 <3.0.0 || >=3.1.4 <4.0.0 || >=4.1.1",
     "webpack-dev-server": ">=5.2.6",
-    "body-parser": ">=1.20.6"
+    "body-parser": ">=1.20.6",
+    "ip-address": ">=10.3.1"
   }
 }
