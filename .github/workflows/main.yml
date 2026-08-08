@@ -84,4 +84,4 @@ jobs:
           # Exit with error code when score is below this threshold (0-100)
           score-threshold: 0
           # Node.js version to use
-          node-version: 20
+          node-version: 22
