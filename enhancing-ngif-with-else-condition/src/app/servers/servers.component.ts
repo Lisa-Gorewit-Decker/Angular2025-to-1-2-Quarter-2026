@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   //   <app-server></app-server>
   //   <app-server></app-server>`,
   templateUrl: './servers.component.html',
+  standalone: false,
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
@@ -34,4 +35,3 @@ export class ServersComponent implements OnInit {
     this.serverName = (<HTMLInputElement>event.target).value;
   }
 }
-
