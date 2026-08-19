@@ -18,6 +18,14 @@ updates:
       prefix: "deps(npm):"
     open-pull-requests-limit: 5
     versioning-strategy: "increase-if-necessary"
+  - package-ecosystem: "npm"
+    directory: "/enhancing-ngif-with-else-condition"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "deps(npm):"
+    open-pull-requests-limit: 5
+    versioning-strategy: "increase-if-necessary"
 
   # Maintain dependencies for Composer
   - package-ecosystem: "composer"
