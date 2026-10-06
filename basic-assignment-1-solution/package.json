@@ -22,12 +22,7 @@
     "bootstrap-icons": "^1.11.3",
     "rxjs": "~7.8.1",
     "tslib": "^2.7.0",
-    "webpack": "^5.104.1",
-    "webpack-dev-middleware": "^7.4.2",
-    "postcss": "^8.4.49",
-    "zone.js": "~0.15.0",
-    "ip": "^2.0.1",
-    "esbuild": "^0.25.1"
+    "zone.js": "~0.15.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.2.0",
