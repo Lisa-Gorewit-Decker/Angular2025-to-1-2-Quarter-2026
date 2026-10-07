@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Requirements
 
-Use Node.js `^16.17.0` or `>=18.10.0` to install dependencies and build this project.
+Use Node.js `^22.22.3`, `^24.15.0`, or `>=26.0.0` to install dependencies and build this project.
 
 ## Development server
 

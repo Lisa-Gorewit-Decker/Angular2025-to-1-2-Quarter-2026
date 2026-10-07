@@ -63,12 +63,7 @@ jobs:
       if: matrix.language == 'javascript-typescript'
       uses: actions/setup-node@v4.4.0
       with:
-        node-version: 20
-
-    - name: Install and build event-binding
-      if: matrix.language == 'javascript-typescript'
-      working-directory: event-binding
-      run: npm ci && npm run build
+        node-version: 24
 
     # Add any setup steps before running the `github/codeql-action/init` action.
     # This includes steps like installing compilers or runtimes (`actions/setup-node`
