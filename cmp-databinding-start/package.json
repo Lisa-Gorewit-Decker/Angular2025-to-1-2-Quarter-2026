@@ -42,5 +42,10 @@
   "main": "karma.conf.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "overrides": {
+    "@angular-devkit/build-angular": {
+      "piscina": "4.9.4"
+    }
+  }
 }
