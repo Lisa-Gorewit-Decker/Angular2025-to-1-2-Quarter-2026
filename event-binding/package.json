@@ -35,5 +35,8 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.9.4",
     "zone.js": "~0.12.0"
+  },
+  "overrides": {
+    "piscina": "4.9.4"
   }
 }
