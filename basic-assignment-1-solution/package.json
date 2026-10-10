@@ -38,6 +38,7 @@
     "typescript": "~5.5.4"
   },
   "overrides": {
+    "@babel/core@<7.29.6": "7.29.6",
     "piscina": "4.9.4",
     "pacote": {
       "tar": "7.5.21"
