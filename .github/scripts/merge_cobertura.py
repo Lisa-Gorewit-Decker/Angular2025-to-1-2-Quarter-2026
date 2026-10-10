@@ -37,7 +37,7 @@ sources_el = ET.SubElement(merged_root, "sources")
         branches_valid += parse_int(root.get("branches-valid"))
         branches_covered += parse_int(root.get("branches-covered"))
 
-        ET.SubElement(sources_el, "source").text = name
+ET.SubElement(sources_el, "source").text = "."
 
         for package in root.findall("./packages/package"):
             package.set("name", name)
