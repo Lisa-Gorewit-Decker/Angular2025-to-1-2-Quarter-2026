@@ -39,6 +39,7 @@
   },
   "overrides": {
     "piscina": "4.9.4",
-    "tar@^6.1.11": "7.5.21"
+    "tar@^6.1.11": "7.5.21",
+    "webpack-dev-middleware": "7.4.6"
   }
 }
