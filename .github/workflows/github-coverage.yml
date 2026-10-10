@@ -1,0 +1,100 @@
+name: Code Coverage
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  coverage-typescript:
+    name: Coverage (${{ matrix.project }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # Only Angular sub-projects whose tests currently build and run
+        # successfully (verified locally with `npm ci && ng test
+        # --code-coverage`) are included here. Several other sub-projects in
+        # this repository have pre-existing, unrelated issues (broken
+        # peer-dependency trees or broken spec files) that prevent them from
+        # producing a trustworthy coverage report.
+        project:
+          - basic-assignment-3-lisa-solution
+          - basics-components
+          - basics-databinding
+          - getting-index-when-using-ngFor
+          - my-angular-app
+          - outputting-lists-with-ngFor
+          - property-binding
+          - property-binding-vs-string-interpolation
+          - string-interpolation
+    steps:
+      - name: Checkout repository
+uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        shell: bash
+        working-directory: ${{ matrix.project }}
+        run: npm ci
+
+      - name: Run tests with coverage
+        shell: bash
+        working-directory: ${{ matrix.project }}
+        # Some sub-projects have pre-existing failing assertions unrelated to
+        # coverage collection; karma still emits the cobertura report before
+        # exiting non-zero, so the job should not be failed by test failures.
+        continue-on-error: true
+        run: npx ng test --no-watch --no-progress --browsers=ChromeHeadlessCI
+
+      - name: Upload coverage artifact
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/upload-artifact@v7
+        with:
+          name: coverage-report-typescript-${{ matrix.project }}
+path: ${{ matrix.project }}/coverage/${{ matrix.project }}/cobertura-coverage.xml
+          if-no-files-found: error
+
+  upload-coverage-typescript:
+    needs: coverage-typescript
+    if: ${{ !cancelled() && needs.coverage-typescript.result == 'success' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      code-quality: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Download coverage artifacts
+        uses: actions/download-artifact@v8
+        with:
+          pattern: coverage-report-typescript-*
+          path: coverage-reports
+
+      - name: Merge coverage reports
+        shell: bash
+        run: |
+          inputs=()
+          for dir in coverage-reports/coverage-report-typescript-*/; do
+            name="$(basename "$dir")"
+            name="${name#coverage-report-typescript-}"
+            inputs+=("${name}=${dir}cobertura-coverage.xml")
+          done
+          python3 .github/scripts/merge_cobertura.py merged-cobertura.xml "${inputs[@]}"
+
+      - uses: actions/upload-code-coverage@v1
+        with:
+          file: merged-cobertura.xml
+          language: TypeScript
+          label: code-coverage-agent
