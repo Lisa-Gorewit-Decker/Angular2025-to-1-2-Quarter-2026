@@ -47,6 +47,9 @@
     "typescript-eslint": "8.57.1"
   },
   "overrides": {
+    "selenium-webdriver": {
+      "tmp": "0.2.7"
+    },
     "webdriver-manager": {
       "adm-zip": "0.6.1"
     },
