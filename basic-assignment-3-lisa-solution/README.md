@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
 
-The project now uses Angular 20.3.32. Use a supported Node.js version: ^20.19.0, ^22.12.0, or >=24.0.0.
+The project now uses Angular 22.2.2. Use a supported Node.js version: ^22.22.3, ^24.15.0, or >=26.0.0.
 
 ## Development server
 
