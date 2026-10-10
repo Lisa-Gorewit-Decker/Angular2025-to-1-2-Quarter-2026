@@ -57,7 +57,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Start the development server with `npm start`, then run `npm run e2e` in a
+separate terminal to execute the existing tests via [Protractor](http://www.protractortest.org/).
+Angular 20 no longer runs Protractor through `ng e2e`; the npm script invokes
+the installed runner directly. Protractor requires a compatible ChromeDriver.
 
 ## Further help
 
