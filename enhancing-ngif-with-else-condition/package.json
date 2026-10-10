@@ -49,6 +49,7 @@
     "less": "4.9.0",
     "path-to-regexp": ">=8.2.0",
     "picomatch": ">=2.3.2 <3.0.0 || >=3.0.2 <4.0.0 || >=4.0.4",
+    "piscina": "5.3.2",
     "postcss": ">=8.5.26",
     "serialize-javascript": ">=6.0.2",
     "uuid": ">=11.1.1",
