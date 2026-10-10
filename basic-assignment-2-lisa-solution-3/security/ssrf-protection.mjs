@@ -181,7 +181,7 @@ function classifyIpv6(address) {
     multicast: isIpv6InCidr(normalizedAddress, 'ff00::', 8),
     unspecified: isIpv6InCidr(normalizedAddress, '::', 128),
     reserved: !isIpv6InCidr(normalizedAddress, '2000::', 3)
-      || isIpv6InCidr(normalizedAddress, '2001::', 23)
+      || isIpv6InCidr(normalizedAddress, '2001::', 32)
       || isIpv6InCidr(normalizedAddress, '2002::', 16)
       || isIpv6InCidr(normalizedAddress, 'fec0::', 10)
       || isIpv6InCidr(normalizedAddress, '100::', 64)
