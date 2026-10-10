@@ -22,8 +22,8 @@ def parse_int(value, default=0):
 
 def main(output_path, named_inputs):
     merged_root = ET.Element("coverage")
+sources_el = ET.SubElement(merged_root, "sources")
     packages_el = ET.SubElement(merged_root, "packages")
-    sources_el = ET.SubElement(merged_root, "sources")
 
     lines_valid = lines_covered = 0
     branches_valid = branches_covered = 0
