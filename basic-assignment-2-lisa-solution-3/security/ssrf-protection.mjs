@@ -156,7 +156,13 @@ function classifyIpv6(address) {
   const normalizedAddress = address.toLowerCase();
 
   if (isIpv6InCidr(normalizedAddress, '::ffff:0:0', 96)) {
-    const embeddedIpv4 = normalizedAddress.slice(normalizedAddress.lastIndexOf(':') + 1);
+    const ipv4Value = Number(parseIpv6(normalizedAddress) & 0xffffffffn);
+    const embeddedIpv4 = [
+      (ipv4Value >>> 24) & 0xff,
+      (ipv4Value >>> 16) & 0xff,
+      (ipv4Value >>> 8) & 0xff,
+      ipv4Value & 0xff,
+    ].join('.');
     const ipv4Classification = classifyIpv4(embeddedIpv4);
 
     return {
@@ -174,7 +180,10 @@ function classifyIpv6(address) {
     uniqueLocal: isIpv6InCidr(normalizedAddress, 'fc00::', 7),
     multicast: isIpv6InCidr(normalizedAddress, 'ff00::', 8),
     unspecified: isIpv6InCidr(normalizedAddress, '::', 128),
-    reserved: isIpv6InCidr(normalizedAddress, 'fec0::', 10)
+    reserved: !isIpv6InCidr(normalizedAddress, '2000::', 3)
+      || isIpv6InCidr(normalizedAddress, '2001::', 32)
+      || isIpv6InCidr(normalizedAddress, '2002::', 16)
+      || isIpv6InCidr(normalizedAddress, 'fec0::', 10)
       || isIpv6InCidr(normalizedAddress, '100::', 64)
       || isIpv6InCidr(normalizedAddress, '2001:db8::', 32)
       || isIpv6InCidr(normalizedAddress, '2001:10::', 28),
