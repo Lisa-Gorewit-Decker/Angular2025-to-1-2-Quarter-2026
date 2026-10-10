@@ -23,7 +23,11 @@ test('classifyIpAddress rejects private, loopback, link-local, multicast, unspec
   assert.equal(classifyIpAddress('ff02::1').multicast, true);
   assert.equal(classifyIpAddress('::').unspecified, true);
   assert.equal(classifyIpAddress('2001:db8::1').reserved, true);
+  assert.equal(classifyIpAddress('::2').isRoutable, false);
+  assert.equal(classifyIpAddress('2001::1').isRoutable, false);
+  assert.equal(classifyIpAddress('2002:7f00:1::').isRoutable, false);
   assert.equal(classifyIpAddress('::ffff:127.0.0.1').loopback, true);
+  assert.equal(classifyIpAddress('::ffff:7f00:1').loopback, true);
 });
 
 test('classifyIpAddress allows public IPv4 and IPv6 addresses', () => {
