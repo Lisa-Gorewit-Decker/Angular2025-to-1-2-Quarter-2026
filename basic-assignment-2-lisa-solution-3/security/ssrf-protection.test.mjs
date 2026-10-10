@@ -33,6 +33,8 @@ test('classifyIpAddress rejects private, loopback, link-local, multicast, unspec
 test('classifyIpAddress allows public IPv4 and IPv6 addresses', () => {
   assert.equal(classifyIpAddress('8.8.8.8').isRoutable, true);
   assert.equal(classifyIpAddress('2606:4700:4700::1111').isRoutable, true);
+  assert.equal(classifyIpAddress('2001:3::1').isRoutable, true);
+  assert.equal(classifyIpAddress('2001:4:112::1').isRoutable, true);
   assert.equal(isPubliclyRoutableIp('8.8.4.4'), true);
   assert.equal(isPrivateOrInternalIp('192.168.1.20'), true);
 });
