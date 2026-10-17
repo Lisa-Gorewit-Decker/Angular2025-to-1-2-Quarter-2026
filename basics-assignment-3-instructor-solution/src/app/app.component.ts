@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   showSecret = false;
-  log = [];
+  log: number[] = [];
 
   onToggleDetails() {
     this.showSecret = !this.showSecret;

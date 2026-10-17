@@ -1,14 +1,11 @@
 import { TestBed } from '@angular/core/testing';
-import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
 
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-      imports: [BrowserModule],
+      imports: [AppModule],
     });
     TestBed.compileComponents();
   });

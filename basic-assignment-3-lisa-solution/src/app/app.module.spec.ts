@@ -1,13 +1,13 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 
 describe('AppModule compatibility', () => {
-  beforeEach(waitForAsync(() => {
+  beforeEach(async () => {
     return TestBed.configureTestingModule({
       imports: [AppModule]
     }).compileComponents();
-  }));
+  });
 
   it('should toggle details and render styled log entries through NgModule', () => {
     const fixture = TestBed.createComponent(AppComponent);

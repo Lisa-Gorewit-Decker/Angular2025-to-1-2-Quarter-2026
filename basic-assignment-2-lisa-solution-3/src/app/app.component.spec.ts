@@ -1,13 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormsModule],
-      declarations: [AppComponent],
+      imports: [AppModule],
     }).compileComponents();
   });
 
@@ -32,7 +31,7 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     const button = compiled.querySelector('button') as HTMLButtonElement;
 
-    expect(button.disabled).toBeTrue();
+    expect(button.disabled).toBe(true);
   });
 
   it('should render the username and enable reset once text is present', () => {
@@ -44,6 +43,6 @@ describe('AppComponent', () => {
     const button = compiled.querySelector('button') as HTMLButtonElement;
 
     expect(compiled.querySelector('p')?.textContent).toContain('Lisa');
-    expect(button.disabled).toBeFalse();
+    expect(button.disabled).toBe(false);
   });
 });

@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output, ViewChild, ElementRef} from '@a
 
 @Component({
   selector: 'app-cockpit',
+  standalone: false,
   templateUrl: './cockpit.component.html',
   styleUrls: ['./cockpit.component.css']
 })
@@ -11,7 +12,7 @@ export class CockpitComponent implements OnInit {
   @Output('bpCreated') blueprintCreated = new EventEmitter<{ serverName: string, serverContent:string }>();
   // newServerName = '';
   // newServerContent = '';
-  @ViewChild('serverContentInput')  serverContentInput: ElementRef;
+  @ViewChild('serverContentInput')  serverContentInput!: ElementRef;
   constructor() {
   }
   ngOnInit(){
