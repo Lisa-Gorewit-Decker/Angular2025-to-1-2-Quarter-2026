@@ -9,11 +9,10 @@
         <li
           class="list-group-item"
           *ngFor="let server of servers;let i = index "
-          (click)="onRemoveServer()">{{ server }}</li>
+          (click)="onRemoveServer(i)">{{ server }}</li>
       </ul>
     </div>
   </div>
 </div>
 <div>
 </div>
-

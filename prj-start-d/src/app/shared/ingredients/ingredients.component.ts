@@ -5,6 +5,7 @@ import { RecipesComponent } from '../../recipes/recipes.component';
 
 @Component({
   selector: 'app-ingredients',
+  standalone: false,
   templateUrl: './ingredients.component.html',
   styleUrls: ['./ingredients.component.css']
 })
